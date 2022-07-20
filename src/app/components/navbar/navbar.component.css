@@ -1,3 +1,8 @@
+.components-module-container{
+    border: 3px solid #515b66;
+    color: #3f464e;
+}
+
 .navbar-title{
     font-size: 26.4px;
     padding-left: 10px;
@@ -8,6 +13,7 @@
 }
 
 .navbar{
+    top: -10px;
     margin: 0px;
     height: 75px;
 }

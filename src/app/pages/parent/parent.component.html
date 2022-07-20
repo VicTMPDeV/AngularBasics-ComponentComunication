@@ -1,8 +1,10 @@
-<div class="parent-component">
+<div class="components-module-container" style="margin-top: 30px;">
+    <span class="component-title"><b>Parent Component&nbsp;</b><span class="module-title">( provided by <b>Pages Module</b> )</span></span>
     <h2>Parent Component</h2>
     <hr>
     <h4>{{ name }}</h4> <!-- INTERPOLACIÓN -> PASO VALOR DE PROPIEDAD EN COMPONENT.TS A HTML -->
     <button class="btn btn-primary" (click)="changeName()"> <!-- EVENTO -> FUNCION DEFINIDA EN COMPONENT.TS MODIFICO VALOR VARIABLE INTERPOLADA ANTERIORMENTE-->
         {{ buttonText }}
     </button>
+    <hr>
 </div>

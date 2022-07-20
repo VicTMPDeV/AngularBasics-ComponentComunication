@@ -14,8 +14,8 @@ import { ChildComponent } from './child/child.component';
     CommonModule
   ],
   exports:[
-    NavbarComponent,
-    ChildComponent //Aunque importe el ComponentsModule en otro módulo, los componentes que tenga declarados este no serán visibles si no los exporto explícitamente
+    NavbarComponent, //Aunque importe el ComponentsModule en otro módulo, los componentes que tenga declarados este no serán visibles si no los exporto explícitamente.
+    ChildComponent //Como voy a utilizar este componente en otro Módulo, tengo que exportarlo. (Si solo lo fuera a utilizar dentro de este Módulo, no haría falta exportarlo).
   ]
 })
 export class ComponentsModule { }

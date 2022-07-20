@@ -1,8 +1,23 @@
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid flex">
-        <a class="navbar-brand" href="#">
-            <img src="../../../assets/images/logoVictor.png" width="40" class="navbar-image">
-            <span class="navbar-title">Navbar Component</span>
-        </a>
+<div class="components-module-container">
+    <span class="component-title"><b>Navbar Component&nbsp;</b><span class="module-title">( provided by <b>Components Module</b> )</span></span>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../../../assets/images/logoVictor.png" width="40" class="navbar-image">
+                <span class="navbar-title">{{ navBarTitle }}</span>
+            </a>
+        </div>
+    </nav>
+    <div class="components-module-container">
+        <span class="component-title"><b>Child Component&nbsp;</b>
+            <span class="module-title">( provided by <b>Components Module & NO NEED TO EXPORT COMPONENT</b> )</span>
+        </span>
+        <div style="display: flex; justify-content:center;">
+            <!-- <app-child></app-child> -->
+            <span><b>child works!</b> -> I don't need to be exported by my Module container (COMPONENTS MODULE) because i'm rendering myself into Navbar component, 
+                that is also inside COMPONENTS MODULE. 
+                <br/>So, we both components have the same CONTEXT.
+                <br/>With this configuration, my relationship whit NavBar Component is that I am the Child and he is my Father.</span>
+        </div>
     </div>
-</nav>
+</div>

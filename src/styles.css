@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+.components-module-container{
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.component-title{
+    position: relative;
+    top: -30px;
+    background-color: white;
+    padding: 10px;
+}
+
+.module-title{
+    color: tomato;
+    background-color: white;
+}
+
+hr {
+    color: black;
+    border-top: 3px solid;
+}

@@ -1,6 +1,4 @@
-.parent-component {
+.components-module-container{
     border: 3px solid #0d6efd;
     color: #0d6efd;
-    border-radius: 15px;
-    padding: 25px;
 }
