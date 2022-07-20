@@ -1,25 +1,48 @@
 <div class="components-module-container" style="margin-top: 30px;">
-    <span class="component-title"><b>Parent Component&nbsp;</b><span class="module-title">( provided by <b>Pages Module</b> )</span></span>
+    <span class="component-title"><b>Parent Component&nbsp;</b><span class="module-title">( provided by <b>Pages
+                Module</b> )</span></span>
     <h2>Parent Component</h2>
     <hr>
-    <h4>{{ name }}</h4> <!-- INTERPOLACIÓN -> PASO VALOR DE PROPIEDAD EN COMPONENT.TS A HTML -->
-    <button class="btn btn-primary" (click)="changeName()"> <!-- EVENTO -> FUNCION DEFINIDA EN COMPONENT.TS MODIFICO VALOR VARIABLE INTERPOLADA ANTERIORMENTE-->
-        {{ buttonText }}
-    </button>
+    <br/>
+    <h4>Parent's Attribute: <span class="pseudo-input-body">{{ parentName }}</span></h4>
+    <!-- INTERPOLACIÓN -> PASO VALOR DE PROPIEDAD EN COMPONENT.TS A HTML -->
+    <div class="flexible-buttons">
+        <button class="btn btn-primary" (click)="changeParentName()">
+            <!-- EVENTO -> FUNCION DEFINIDA EN COMPONENT.TS MODIFICO VALOR VARIABLE INTERPOLADA ANTERIORMENTE -->
+            {{ usingDecorators }}
+        </button>
+        <button class="btn btn-warning" (click)="changeParentNameByService()">
+            {{ usingServices }}
+        </button>
+    </div>
     <hr>
     <div class="components-module-container" style="margin-top: 30px;">
         <span class="component-title"><b>Child Component&nbsp;</b>
             <span class="module-title">( provided by <b>Components Module & YES!!, I NEED TO BE EXPORTED</b> )</span>
         </span>
         <div style="display: flex; justify-content:center;">
-            <!-- <app-child></app-child> -->
-            <span><b>child works!</b> -> In this case I need to be exported by my Module container (COMPONENTS MODULE) because i'm rendering inside Parent Component, 
-                which is inside PAGES MODULE (We ARE NOT INTO the same MODULE).  
-                <br/>So, we both components DON'T have the same CONTEXT (PAGES MODULE doesn't know nothing about Child Component until COMPONENTS MODULE.
-                <br/>With this configuration, my relationship whit Parent Component is that I am the Child and he is my Father.</span>
+            <span><b>child works!</b> -> In this case I need to be exported by my Module container (COMPONENTS MODULE)
+                because i'm rendering inside Parent Component,
+                which is inside PAGES MODULE (We ARE NOT INTO the same MODULE).
+                <br />So, we both components DON'T have the same CONTEXT (PAGES MODULE doesn't know nothing about Child
+                Component until COMPONENTS MODULE.
+                <br />With this configuration, my relationship whit Parent Component is that I am the Child and he is my
+                Father.</span>
         </div>
-        <br/>
-        <app-child></app-child>
+        <br />
+        <!-- [childName] es la propiedad @Input public childName del componente que tiene por selector <app-child> -->
+        <!-- La voy a igualar con la propiedad del componente Padre parentName, de este modo COMUNICO EL PADRE CON EL HIJO -->
+
+        <div style="padding: 20px;">
+            <app-child [childName]="parentName" [buttonText]="childButtonText"
+                (emitChildName)="receiveChildEvent($event)">
+            </app-child>
+        </div>
+        <div style="padding: 20px;">
+            <app-child [childName]="parentName" [buttonText]="childButtonTextService"
+                (emitChildName)="receiveChildEventByService($event)">
+            </app-child>
+        </div>
 
     </div>
 </div>
