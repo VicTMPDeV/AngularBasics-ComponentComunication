@@ -12,10 +12,18 @@
         <span class="component-title"><b>Child Component&nbsp;</b>
             <span class="module-title">( provided by <b>Components Module & NO NEED TO EXPORT COMPONENT</b> )</span>
         </span>
-        <div style="display: flex; justify-content:center;">
+        <div style="display: flex; justify-content:center; flex-direction: column;">
             <!-- <app-child></app-child> -->
-            <span><b>child works!</b> -> I don't need to be exported by my Module container (COMPONENTS MODULE) because i'm rendering myself into Navbar component, 
-                that is also inside COMPONENTS MODULE. 
+            <span style="background-color: #3f464e; color: white; padding: 5px; text-align: center; border-radius: 5px;">
+                <b>ONE COMPONENT CAN BE ONLY BE PROVIDED BY ONE MODULE. <br/>IF ANOTHER MODULE <span style="color: red">(B)</span> 
+                    WANTS TO USE MODULE <span style="color: blue">(A)</span> COMPONENTS...
+                    <br/>1.- MODULE <span style="color: blue">(A)</span> HAS TO SHARE IT'S COMPONENTS BY EXPORTING THEM.
+                    <br/>2.- MODULE <span style="color: red">(B)</span> HAS TO IMPORT MODULE <span style="color: blue">(A)</span>.
+                </b>
+            </span>
+            <br/>
+            <span><b>child works!</b> -> I don't need to be exported by my Module container (COMPONENTS MODULE) because i'm rendering inside Navbar Component, 
+                which is also inside COMPONENTS MODULE (We share the same MODULE). 
                 <br/>So, we both components have the same CONTEXT.
                 <br/>With this configuration, my relationship whit NavBar Component is that I am the Child and he is my Father.</span>
         </div>

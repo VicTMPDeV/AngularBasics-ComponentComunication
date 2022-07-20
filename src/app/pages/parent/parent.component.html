@@ -7,4 +7,19 @@
         {{ buttonText }}
     </button>
     <hr>
+    <div class="components-module-container" style="margin-top: 30px;">
+        <span class="component-title"><b>Child Component&nbsp;</b>
+            <span class="module-title">( provided by <b>Components Module & YES!!, I NEED TO BE EXPORTED</b> )</span>
+        </span>
+        <div style="display: flex; justify-content:center;">
+            <!-- <app-child></app-child> -->
+            <span><b>child works!</b> -> In this case I need to be exported by my Module container (COMPONENTS MODULE) because i'm rendering inside Parent Component, 
+                which is inside PAGES MODULE (We ARE NOT INTO the same MODULE).  
+                <br/>So, we both components DON'T have the same CONTEXT (PAGES MODULE doesn't know nothing about Child Component until COMPONENTS MODULE.
+                <br/>With this configuration, my relationship whit Parent Component is that I am the Child and he is my Father.</span>
+        </div>
+        <br/>
+        <app-child></app-child>
+
+    </div>
 </div>
