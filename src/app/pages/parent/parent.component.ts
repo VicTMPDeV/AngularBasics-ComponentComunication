@@ -30,7 +30,7 @@ export class ParentComponent {
   }
 
   public receiveChildEventByService(event:string): void {
-    this.parentName = event;
+    this.parentName = event; 
     this._dataService.serviceName = event;
   }
 

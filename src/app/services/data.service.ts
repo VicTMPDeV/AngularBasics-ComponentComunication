@@ -7,5 +7,4 @@ export class DataService {
 
   public serviceName: string = 'STAR WARS';
 
-  constructor() { }
 }
