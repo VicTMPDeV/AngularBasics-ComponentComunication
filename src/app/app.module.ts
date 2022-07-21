@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
+import { DataService } from './shared/services/data.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { PagesModule } from './pages/pages.module';
     ComponentsModule,
     PagesModule
   ],
-  providers: [],
+  providers: [DataService], //2.- El servicio se puede proveer aquí, si no tenemos acceso al mismo para indicarlo
   bootstrap: [AppComponent]
 })
 export class AppModule { }
